@@ -1,0 +1,88 @@
+{
+	"name": "@botamic/toolkit",
+	"version": "0.1.0",
+	"description": "Toolkit to build GitHub Apps with Probot.",
+	"homepage": "https://github.com/botamic/toolkit",
+	"bugs": {
+		"url": "https://github.com/botamic/toolkit/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:botamic/toolkit.git"
+	},
+	"license": "MPL-2.0",
+	"author": "Brian Faust <hello@basecode.sh>",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index",
+	"types": "dist/index",
+	"scripts": {
+		"build": "yarn clean && tsc",
+		"build:watch": "yarn build -w",
+		"clean": "rimraf .coverage dist tmp",
+		"format": "yarn lint && yarn prettier",
+		"lint": "tslint -c tslint.json -p tslint.json 'src/**/*.ts' --fix",
+		"prepublishOnly": "yarn format && yarn test && yarn build",
+		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
+		"test": "jest",
+		"test:watch": "jest --watchAll"
+	},
+	"jest": {
+		"bail": true,
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"src/**/*.ts",
+			"!**/node_modules/**"
+		],
+		"coverageDirectory": "<rootDir>/.coverage",
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"setupFilesAfterEnv": [
+			"jest-extended"
+		],
+		"testEnvironment": "node",
+		"testMatch": [
+			"**/*.test.ts"
+		],
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"verbose": true
+	},
+	"dependencies": {
+		"@hapi/joi": "^15.1.0",
+		"probot": "^9.2.15",
+		"probot-config": "^1.0.1"
+	},
+	"devDependencies": {
+		"@types/hapi__joi": "^15.0.2",
+		"@types/jest": "^24.0.15",
+		"@types/node": "^12.0.10",
+		"@types/prettier": "^1.16.4",
+		"@types/rimraf": "^2.0.2",
+		"@typeskrift/tsconfig": "^0.1.2",
+		"@typeskrift/tslint": "^0.1.4",
+		"codecov": "^3.5.0",
+		"jest": "^24.8.0",
+		"jest-extended": "^0.11.1",
+		"prettier": "^1.18.2",
+		"rimraf": "^2.6.3",
+		"ts-jest": "^24.0.2",
+		"tslint": "^5.18.0",
+		"typescript": "^3.5.2"
+	}
+}
