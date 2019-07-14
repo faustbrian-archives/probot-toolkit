@@ -1,6 +1,6 @@
 {
 	"name": "@botamic/toolkit",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Toolkit to build GitHub Apps with Probot.",
 	"homepage": "https://github.com/botamic/toolkit",
 	"bugs": {
