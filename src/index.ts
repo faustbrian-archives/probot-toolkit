@@ -15,6 +15,7 @@ export const getConfig = async <T = Record<string, any>>(
 		return undefined;
 	}
 
+	// @ts-ignore
 	return value[Object.keys(schema)[0]];
 };
 
