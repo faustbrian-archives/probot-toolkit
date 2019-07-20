@@ -6,7 +6,7 @@ import probotConfig from "probot-config";
 export const getConfig = async <T = Record<string, any>>(
 	context: Context,
 	schema: object,
-	file: string = "config.yml",
+	file = "config.yml",
 ): Promise<T | undefined> => {
 	const { error, value } = Joi.validate(await probotConfig(context, file), schema);
 
