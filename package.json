@@ -71,8 +71,8 @@
 	"devDependencies": {
 		"@types/hapi__joi": "^15.0.2",
 		"@types/jest": "^24.0.15",
-		"@types/node": "^12.6.2",
-		"@types/prettier": "^1.16.4",
+		"@types/node": "^12.6.8",
+		"@types/prettier": "^1.18.0",
 		"@types/rimraf": "^2.0.2",
 		"@typeskrift/tsconfig": "^0.1.2",
 		"@typeskrift/tslint": "^0.1.5",
