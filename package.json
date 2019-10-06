@@ -64,7 +64,7 @@
 		"verbose": true
 	},
 	"dependencies": {
-		"@hapi/joi": "^15.1.0",
+		"@hapi/joi": "^16.0.0",
 		"probot": "^9.2.19",
 		"probot-config": "^1.1.0"
 	},
